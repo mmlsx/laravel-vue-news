@@ -4,7 +4,7 @@
 
 | 软件包 | 版本 |
 | --- | --- |
-| Php | 7.0 |
+| PHP | 7.0 |
 | Server | nginx |
 | Laravel | 5.5 |
 | Vue | > 2.0 |
