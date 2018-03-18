@@ -2,23 +2,23 @@
 	<section>
 		<nav class="my-3">
 			<ul class="pagination" :class="getPisition">
-				<li class="page-item" :class="{'disabled': lists.prev_page_url == null}">
+				<li class="page-item" @click="changeLists('prev', getPrevPath)" :class="{'disabled': lists.prev_page_url == null}">
 					<template v-if="lists.prev_page_url == null">
-						<a href="#" class="page-link" tabindex="-1">&lt;&lt;</a>
+						<a href="javascript:void(0);" class="page-link" tabindex="-1">&lt;&lt;</a>
 					</template>
 					<template v-else>
-						<a :href="getPrevPath" class="page-link">&lt;&lt;</a>
+						<router-link :to="{path: '/news/lists/' + getPrevPath}" class="page-link">&lt;&lt;</router-link>
 					</template>
 				</li>
-				<li class="page-item" v-for="(item, index) in getTotalPage" :class="{'active': isCurrentPage == item.num, 'v-disabled': isCurrentPage == item.num}">
-					<a :href="item.url" class="page-link">{{ item.num }}</a>
+				<li class="page-item" v-for="(item, index) in getTotalPage" :class="{'active': isCurrentPage == item.num, 'v-disabled': isCurrentPage == item.num}" @click="changeLists('middle', item.num)">
+					<router-link :to="{path: '/news/lists/' + item.num}" class="page-link">{{ item.num }}</router-link>
 				</li>
-				<li class="page-item" :class="{'disabled': lists.next_page_url == null}">
+				<li class="page-item" @click="changeLists('next', getNextPath)" :class="{'disabled': lists.next_page_url == null}">
 					<template v-if="lists.next_page_url == null">
-						<a href="#" class="page-link" tabindex="-1">&gt;&gt;</a>
+						<a href="javascript:void(0);" class="page-link" tabindex="-1">&gt;&gt;</a>
 					</template>
 					<template v-else>
-						<a :href="getNextPath" class="page-link">&gt;&gt;</a>
+						<router-link :to="{path: '/news/lists/' + getNextPath}" class="page-link">&gt;&gt;</router-link>
 					</template>
 				</li>
 			</ul>
@@ -70,6 +70,10 @@
 			}
 		},
 		methods: {
+			changeLists (paginateStr, index) {
+				// 时间监听，修改lists数据
+				this.$emit('change-lists', index)
+			},
 			getFilterPath (prevOrNext) {
 				/*
 				
@@ -92,22 +96,23 @@
 				 */
 				// 处理路径
 				let path,num;
-				if (prevOrNext == 'prev') {
+				if (prevOrNext === 'prev') {
 					path = this.lists.prev_page_url
-				} else if (prevOrNext == 'next') {
+				} else if (prevOrNext === 'next') {
 					path = this.lists.next_page_url
 				}
-				if (path.indexOf('?') !== -1) {
+				if (path && path.indexOf('?') !== -1) {
 					// 获取截取字符串后的下标为1的，即 ?page=1
 					let str = path.substr(1)
 					// 获取等候后面的值 即 page=1 中的1
 					num = str.split('=')[1]
 				}
 				// 拼接路径到 num 页码
-				let url = this.lists.path + '/' + num
+				//let url = this.lists.path + '/' + num
 				// 去掉路径中的 api/
-				url = url.replace(/api\//gi, '')
-				return url
+				//url = url.replace(/api\//gi, '')
+				//return url
+				return num
 			}
 		}
 	}

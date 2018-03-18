@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// 路由配置
+// 路由配置 接口路由
 Route::get('/news', 'NewsController@index');
 Route::get('/news/lists', 'NewsController@getList');
 Route::get('/news/detail/{id}', 'NewsController@show');

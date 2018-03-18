@@ -20,7 +20,7 @@
 				</li>
 			</ul>
 		</div>
-		<v-pagination :is-position="'center'" :is-current-page="isCurrentPage" :lists="lists"></v-pagination>
+		<v-pagination :is-position="'center'" @change-lists="getChangeLists($event)" :is-current-page="isCurrentPage" :lists="lists"></v-pagination>
 	</section>
 </template>
 
@@ -47,7 +47,15 @@
 		methods: {
 			...mapActions([
 				'GET_NEWS_LISTS'
-				])
+				]),
+			getChangeLists (val) {
+				if (val) {
+					// 更新当前页
+					this.isCurrentPage = val
+					// 更新当前页数据
+					this.GET_NEWS_LISTS(val)
+				}
+			}
 		},
 		created () {
 			this.isCurrentPage = this.$route.params.page

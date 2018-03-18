@@ -11,7 +11,7 @@ class NewsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        // 创建新闻数据
         factory(App\News::class, 20)->create();
     }
 }

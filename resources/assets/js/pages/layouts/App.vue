@@ -18,7 +18,7 @@
 					</ul>
 				</div>
 			</nav> -->
-			<div class="nav-scroller py-1 mb-2 border-top border-bottom border-secondary">
+			<div class="nav-scroller py-1 mb-3 border-top border-bottom border-secondary">
 		        <nav class="nav nav-pills nav-fill d-flex justify-content-between">
 		            <!-- <a class="p-2 text-muted active" href="#">World</a>-->
 					<a class="nav-item nav-link p-2" v-for="(item, index) in navList" :class="{ 'active': item.active }" :href="item.url" >
@@ -36,7 +36,7 @@
 			</keep-alive>
 		</main>
 		<footer class="app-footer">
-			<p class="mb-0">&copy; 2017 data sales platform</p>
+			<p class="mb-0">&copy; 2017 news message platform</p>
 		</footer>
 	</div>
 </template>
@@ -49,42 +49,42 @@
 				navList: [
 					{
 						title: '首页',
-						url: '#',
+						url: '/news',
 						active: true
 					},
 					{
 						title: '国内',
-						url: '#',
+						url: '/news',
 						active: false
 					},
 					{
 						title: '国际',
-						url: '#',
+						url: '/news',
 						active: false
 					},
 					{
 						title: '军事',
-						url: '#',
+						url: '/news',
 						active: false
 					},
 					{
 						title: '体育',
-						url: '#',
+						url: '/news',
 						active: false
 					},
 					{
 						title: '财经',
-						url: '#',
+						url: '/news',
 						active: false
 					},
 					{
 						title: '科技',
-						url: '#',
+						url: '/news',
 						active: false
 					},
 					{
 						title: '互联网',
-						url: '#',
+						url: '/news',
 						active: false
 					}
 				]

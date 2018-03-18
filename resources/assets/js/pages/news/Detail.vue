@@ -1,15 +1,16 @@
 <template>
-	<section>
+	<article>
 		<div class="card">
 			<div class="card-header bg-transparent card-header-divider">
 				<h3 class="h3">{{ detail.id + '. ' + detail.title }}</h3>
+				<p class="my-2"><small class="text-muted">{{ detail.created_at }}</small></p>
 			</div>
 			<div class="card-body">
 				<p>{{ detail.content }}</p>
-				<p class="card-text"><small class="text-muted">{{ detail.created_at }}</small></p>
+				<p class="card-text text-right"><small class="text-muted">{{ detail.created_at }}</small></p>
 			</div>
 		</div>
-	</section>
+	</article>
 </template>
 
 <script>
