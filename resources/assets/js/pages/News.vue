@@ -32,7 +32,7 @@
 				  </div>
 				</div>
 
-				<div class="card rounded-0" v-for="(item, index) in recommend" :class="{'mt-3': index == 0, 'border-bottom-0 border-left-0 border-right-0 border-info': index > 0}" v-if="index < 15">
+				<div class="card rounded-0" v-for="(item, index) in recommend" :class="{'mt-3': index == 0, 'border-bottom-0 border-left-0 border-right-0 border-primary': index > 0}" v-if="index < 15">
 				  <div class="card-body">
 				    <h5 class="card-title">{{ item.title }}</h5>
 				    <p class="card-text">{{ item.content }}</p>

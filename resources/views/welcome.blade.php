@@ -9,11 +9,6 @@
         <title>laravel-vue-vuerouter-vuex-axios</title>
     </head>
     <body>
-        <!-- <div id="app" class="container">
-            <keep-alive>
-                <router-view class="view"></router-view>
-            </keep-alive>
-        </div> -->
         <div id="app"></div>
     </body>
     <script type="text/javascript">

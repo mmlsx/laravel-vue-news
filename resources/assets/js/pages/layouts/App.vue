@@ -54,37 +54,37 @@
 					},
 					{
 						title: '国内',
-						url: '/news',
+						url: '#',
 						active: false
 					},
 					{
 						title: '国际',
-						url: '/news',
+						url: '#',
 						active: false
 					},
 					{
 						title: '军事',
-						url: '/news',
+						url: '#',
 						active: false
 					},
 					{
 						title: '体育',
-						url: '/news',
+						url: '#',
 						active: false
 					},
 					{
 						title: '财经',
-						url: '/news',
+						url: '#',
 						active: false
 					},
 					{
 						title: '科技',
-						url: '/news',
+						url: '#',
 						active: false
 					},
 					{
 						title: '互联网',
-						url: '/news',
+						url: '#',
 						active: false
 					}
 				]
@@ -136,6 +136,6 @@
     }
 
     .nav-pills .nav-link.active{
-	    background-color: #c7c7c7db;
+	    background-color: #33b4f3;
 	}
 </style>
