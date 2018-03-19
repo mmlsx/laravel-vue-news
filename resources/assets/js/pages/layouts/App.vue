@@ -35,7 +35,7 @@
 				<router-view></router-view>
 			</keep-alive>
 		</main>
-		<footer class="app-footer">
+		<footer class="app-footer mt-3">
 			<p class="mb-0">&copy; 2017 news message platform</p>
 		</footer>
 	</div>
@@ -127,7 +127,6 @@
 		width: 100%;
 		text-align: center;
         background-image: linear-gradient(to bottom, #f7f7f7 0%, #eee 100%);
-        margin-top: 30px;
 		box-sizing: border-box;
 	    border: 1px solid rgba(0,0,0,.14);
         p {

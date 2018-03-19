@@ -10,7 +10,6 @@ class NewsController extends Controller
     /**
      * 首页推荐
      * 
-     * 
      */
     public function index()
     {
